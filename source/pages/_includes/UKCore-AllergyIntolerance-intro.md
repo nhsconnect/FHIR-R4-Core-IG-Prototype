@@ -13,13 +13,39 @@ Where a propensity is identified, to record information or evidence about a reac
 Substances include but are not limited to a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings.
 
 
-### Profile Minimum Viable Content ###
+### Example Usage Scenarios ###
 
-The following elements are mandatory in this UKCore-AllergyIntolerance FHIR profile (i.e. MUST be present):
+The following are example usage scenarios for the UK Core AllergyIntolerance profile:
 
-1.	patient
+- Query for Patient allergy information 
+- Exchange Patient allergy information within a FHIR document or message.
 
-The Minimum Viable Content for this profile has not yet been defined and may be added in a later release.
+### Profile Minimum Viable Content (Mandatory and Must Support Data Elements) ###
+
+The following data-elements are mandatory (i.e data MUST be present) or must be supported if the data is present in the sending system (Must Support definition). They are presented below in a simple human-readable explanation. Profile specific guidance and examples are provided as well. The formal Profile Definition below provides the formal summary, definitions, and terminology requirements.
+
+**Each AllergyIntolerance resource must have:**
+
+1. A status of the allergy*
+2. A code which tells you what the patient is allergic to
+3. A patient
+
+*The status element has the following constraints: SHALL be present if verification status is not entered-in-error and SHALL NOT be present if verification Status is entered-in-error.
+
+**Each Patient resource must support:**
+
+1. A patient name
+2. A gender
+3. Contact detail (e.g. a telephone number or an email address)
+4. A birth date
+5. An address
+6. A communication language
+7. An ethnicity
+
+**Profile specific implementation guidance:**
+
+When the Patient profile is being used with an NHS Number in the patient.identifier element, the verification status of the NHS Number MUST also be carried.
+
 
 ### Example ###
 
